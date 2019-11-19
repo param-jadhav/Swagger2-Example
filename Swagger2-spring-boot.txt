@@ -1,0 +1,53 @@
+What is Swagger
+
+Swagger is a specification for documenting REST API. It specifies the format (URL, method, and representation) to describe REST web services. Swagger is meant to enable the service producer to update the service documentation in real time so that client and documentation systems are moving at the same pace as the server. The methods, parameters, and models description are tightly integrated into the server code, thereby maintaining the synchronization in APIs and its documentation.
+
+Swagger is the initiative of Wordnik, which defines the specification and framework for their internal development use for “develop.wordnik.com” and underlying system. They started developing the framework in early 2010—being released, is currently also used by Wordnik’s APIs, which powers both internal and external API clients.
+
+Advantages
+
+With the Swagger framework, the server, client and documentation team can be in synchronization simultaneously.
+
+As Swagger is a language-agnostic specification, with its declarative resource specification, clients can easily understand and consume services without any prior knowledge of server implementation or access to the server code.
+
+The Swagger UI framework allows both implementers and users to interact with the API. It gives clear insight into how the API responds to parameters and options.
+
+Swagger responses are in JSON and XML, with additional formats in progress.
+
+Swagger implementations are available for various technologies like Scala, Java, and HTML5.
+
+Client generators are currently available for Scala, Java, JavaScript, Ruby, PHP, and Actionscript 3, with more client support underway.
+
+With this, we attempt to expose the sample REST web-service with Spring MVC, and showcase the Swagger documentation.
+
+Swagger is widely used for visualizing APIs, and with Swagger UI it provides online sandbox for frontend developers
+
+<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+To enable the Swagger 2 we use the annotation @EnableSwagger2.
+
+A Docket bean is defined and using its select() method we get an instance of ApiSelectorBuilder. ApiSelectorBuilder we configure the endpoints exposed by Swagger.
+After the Docket bean is defined, its select() method returns an instance of ApiSelectorBuilder, which provides a way to control the endpoints exposed by Swagger.
+Using the RequestHandlerSelectors and PathSelectors we configure the predicates for selection of RequestHandlers.
+
+
+
+
+@Api—–> Narrates the description about what in general is the responsibility of the controller.
+
+@ApiOperation—-> Narrates the responsibility of the specific method.
+
+@ApiParam—>Narrates the parameter the method is expecting and also tells whether it is mandatory or not.
+
+URL to access DOCS:
+http://localhost:8080/swagger-ui.html
